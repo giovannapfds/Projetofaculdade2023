@@ -1,0 +1,113 @@
+,<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Cupacakes Dreams</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+
+    <!-- Font awesome -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">   
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">    
+    <!-- Date Picker -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datepicker.css">   
+     <!-- Gallery Lightbox -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet"> 
+    <!-- Theme color -->
+    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">     
+
+    <!-- Main style sheet -->
+    <link href="carrinho.css" rel="stylesheet">    
+
+    <!-- Google Fonts -->  
+    <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Black' rel='stylesheet' type='text/css'>   
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>
+            <div class="mu-title">
+              <span class="mu-subtitle">Seus dados e detalhes da compra</span>
+              <h2>Cupcakes dreams</h2>
+            </div>
+    <body>
+
+      <div id="carrinho">
+        <h2>Preencha os campos</h2>
+        </div>
+<body>
+  
+    <div class="mu-contact-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mu-contact-left">
+              <!-- Email message div -->
+              <div id="form-messages"></div>
+              <!-- Start contact form -->
+              <form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
+                <div class="form-group">
+                  <label for="name">Nome</label>
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
+                </div>
+                <div class="form-group">
+                  <label for="Endereço">Endereço</label>
+                  <input type="endereço" class="form-control" id="endereço" name="endereço" placeholder="endereço" required>
+                </div>                      
+                <div class="form-group">
+                    <label for="subject">CEP</label>
+                    <input type="number" class="form-control" id="CEP" name="CEP" placeholder="CEP" required>
+                    <p></p>
+                    <button type="button" id="calculate-freight">Calcular Frete</button>
+                </div>
+                <div id="freight-result"></div>
+                
+                <script>
+                    const calculateFreightButton = document.getElementById("calculate-freight");
+                    const CEPInput = document.getElementById("CEP");
+                    const freightResultDiv = document.getElementById("freight-result");
+                
+                    calculateFreightButton.addEventListener("click", () => {
+                        const CEP = CEPInput.value;
+                        if (CEP.length !== 8 || isNaN(CEP)) {
+                            freightResultDiv.textContent = "CEP inválido.";
+                            return;
+                        }
+                
+                        const freightValue = calcularFrete(CEP); // 
+                        freightResultDiv.textContent = `Valor do frete: R$ ${freightValue.toFixed(2)}`;
+                    });
+                
+                    function calcularFrete(cep) {
+                        return 10.50; 11.25; 20.00;
+                    }
+                </script>
+                
+                <div class="form-group">
+                    <label for="entrega">Dia da Entrega</label>
+                    <select id="delivery-day" name="delivery-day">
+                    </div>
+                      <option value="segunda">Segunda-feira</option>
+                      <option value="terca">Terça-feira</option>
+                      <option value="quarta">Quarta-feira</option>
+                      <option value="quinta">Quinta-feira</option>
+                      <option value="sexta">Sexta-feira</option>
+                      <option value="sabado">Sabado</option>
+                    <input type="date" class="form-control" id="xx/xx/xxxx" name="xx/xx/xxxx" placeholder="xx/xx/xxxx" required>
+                  </div>       
+                                    
+                <button type="submit" class="mu-send-btn">Ir para o pagamento</button>
+              </form>
+            </div>
+          </div>    
+    <div id="freight-result"></div>
+  </form>
+  
+  <script src="script.js"></script>
+</body>
+</html>

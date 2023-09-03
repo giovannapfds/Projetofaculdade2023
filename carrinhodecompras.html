@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Cupacakes Dreams</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+
+    <!-- Font awesome -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">   
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">    
+    <!-- Date Picker -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datepicker.css">   
+     <!-- Gallery Lightbox -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet"> 
+    <!-- Theme color -->
+    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">     
+
+    <!-- Main style sheet -->
+    <link href="style.css" rel="stylesheet">    
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Black' rel='stylesheet' type='text/css'>   
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  </head>
+  
+  <body>
+  <!--START SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#">
+      <i class="fa fa-angle-up"></i>
+    </a>
+  <!-- END SCROLL TOP BUTTON -->
+
+  <!-- Start header section -->
+  <header id="mu-header">  
+    <p></p>
+    <p></p>
+    <nav class="navbar navbar-default mu-main-navbar" role="navigation">  
+      <div class="container">
+        <div class="navbar-header">
+        
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p></p>
+          <p></p>
+           <!--  Text based logo  -->
+           <a class="navbar-brand" href="index.html">Cupcakes<span>Dreams</span></a> 
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#mu-about-us">SOBRE NÓS</a></li>    
+            <li><a href="#mu-restaurant-menu">MENU</a></li>                      
+            <li><a href="#mu-chef">MAIS VENDIDOS</a></li> 
+            <li><a href="#mu-contact">ENCOMENDE</a></li>
+            <li><a href="carrinhodecompras.html"><i></i><img src="assets/img/menu/car.png" alt="img" ></i> </a></li> 
+            
+            
+
+          </ul>                            
+        </div><!--/.nav-collapse -->       
+      </div>          
+    </nav> 
+  </header>
+  <!-- End header section -->
+ 
+  <body>
+            <div class="mu-title">
+              <span class="mu-subtitle">Carrinho de compras</span>
+              <h2>Cupcakes dreams</h2>
+            </div>
+    <body>
+
+      <div id="carrinho">
+        <h2>Carrinho de Compras</h2>
+        </div>
+
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading"><a href="#">Sonho de valsa</a></h4>
+          <span>R$10.50</span>
+          <p>Um delicioso cupcake com massa fofinha e recheado com um creme de sonho de valsa...</p>
+          <button type="button" class="mu-send-btn" onclick="adicionarAoCarrinho('Sonho de valsa', 10.50)">quero + 1</button>
+        </div>
+      </div>
+
+      <div class="media">
+        <div class="media-body">
+        <h4 class="media-heading"><a href="#">Mallow mallow</a></h4>
+        <span>R$11.95</span>
+        <p>O cupcake sabor marshmallow é uma deliciosa sobremesa feita com massa macia e fofinha, recheado com cremoso marshmallow e coberto com uma generosa camada de glacê de marshmallow. É impossível resistir à doçura delicada e sabor suave desse cupcake. Perfeito para adoçar qualquer momento!</p>
+        <button type="button" class="mu-send-btn" onclick="adicionarAoCarrinho('Mallow mallow', 11.95)">quero + 1</button>
+      </div>
+    </div>
+
+    </li>
+
+      
+    <nav class="navbar navbar-default navbar-fixed-bottom"></nav>
+    <div>
+      <ul id="lista-carrinho"></ul>
+      <h4 class="text-center text-success">Total: R$<span id="total"></span></h4>
+      <button type="submit" class="mu-send-btn"><a href="formcompra.html"> Proximo</a></but
+    </div>
+  </nav>
+    
+    
+      <script>
+        const carrinho = [];
+        let total = 0;
+    
+        function adicionarAoCarrinho(produto, preco) {
+          carrinho.push({produto, preco });
+          total += preco;
+          atualizarCarrinho();
+        }
+    
+        function atualizarCarrinho() {
+          const listaCarrinho = document.getElementById("lista-carrinho");
+          const totalElement = document.getElementById("total");
+          
+          listaCarrinho.innerHTML = "";
+          carrinho.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = `${item.produto} - R$${item.preco.toFixed(2)}`;
+            listaCarrinho.appendChild(li);
+          });
+          
+          totalElement.textContent = total.toFixed(2);
+        }
+
+      </script>
+    </body>
+  <!--START SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#">
+      <i class="fa fa-angle-up"></i>
+    </a>
+  <!-- END SCROLL TOP BUTTON -->
+
+  <!-- Start header section -->
+  <header id="mu-header">  
+    <nav class="navbar navbar-default mu-main-navbar" role="navigation">  
+      <div class="container">
+        <div class="navbar-header">
+        
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+      
+      </div>          
+    </nav> 
+  </header>
+  
+  <section id="mu-contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-contact-area">
+
+            <div class="mu-contact-content">
+              <div class="row">               
+                      
+
+                    </form>
+                  </div>
+                </div>
+
+                <head>
+                  <meta charset="utf-8">
+                  <title></title>
+                  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+                </head>
+                <body>
+                  <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <a id="navTitle" class="navbar-brand" href="index.html"></a>
+                      </div>
+                    </div>
+                  </nav>
+                
+                
+                  <script type="text/javascript" src="js/config.js"></script>
+                  <script type="text/javascript" src="js/main.js"></script>
+                 
+  <!-- Start Footer -->
+  <footer id="mu-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="mu-footer-area">
+           <div class="mu-footer-social">
+            <a href="https://www.facebook.com/"><span class="fa fa-facebook"></span></a>
+            <a href="https://www.youtube.com/"><span class="fa fa-youtube"></span></a>
+            <a href="https://www.linkedin.com/home"><span class="fa fa-linkedin"></span></a>
+            <a href="https://www.whatsapp.com/?lang=pt_br"><span class="fa fa-whatsapp"></span></a>
+          </div>
+          <div class="mu-footer-copyright">
+            <p>&copy; Copyright <a rel="nofollow" href="http://markups.io">© 2023 Cupacakes dreams.</a> Todos os direitos reservados.</p>
+          </div>         
+        </div>
+      </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+                
+                  </body>
+                </html>
